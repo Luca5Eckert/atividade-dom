@@ -51,11 +51,10 @@ function alterarTudo() {
     alterarFonteParagrafo();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('btnFundo').addEventListener('click', alterarCorDeFundo);
-    document.getElementById('btnCorTitulo').addEventListener('click', alterarCorTitulo);
-    document.getElementById('btnCorParagrafo').addEventListener('click', alterarCorParagrafo);
-    document.getElementById('btnFonteTitulo').addEventListener('click', alterarFonteTitulo);
-    document.getElementById('btnFonteParagrafo').addEventListener('click', alterarFonteParagrafo);
-    document.getElementById('btnTudo').addEventListener('click', alterarTudo);
-});
+
+document.getElementById('btnFundo').addEventListener('click', alterarCorDeFundo);
+document.getElementById('btnCorTitulo').addEventListener('click', alterarCorTitulo);
+document.getElementById('btnCorParagrafo').addEventListener('click', alterarCorParagrafo);
+document.getElementById('btnFonteTitulo').addEventListener('click', alterarFonteTitulo);
+document.getElementById('btnFonteParagrafo').addEventListener('click', alterarFonteParagrafo);
+document.getElementById('btnTudo').addEventListener('click', alterarTudo);
