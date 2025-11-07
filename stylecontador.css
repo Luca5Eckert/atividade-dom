@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+#counter {
+    font-size: 6rem; /* Tamanho do número */
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px; /* Espaço entre os botões */
+}
+
+.control-btn {
+    padding: 20px 40px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+    width: 120px; /* Largura para botões grandes */
+}
+
+#decrement-btn {
+    background-color: #e74c3c; /* Vermelho para 'menos' */
+    color: white;
+}
+
+#decrement-btn:hover {
+    background-color: #c0392b;
+}
+
+#increment-btn {
+    background-color: #2ecc71; /* Verde para 'mais' */
+    color: white;
+}
+
+#increment-btn:hover {
+    background-color: #27ae60;
+}
