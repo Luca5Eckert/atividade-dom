@@ -1,0 +1,128 @@
+/* Reset básico para melhor consistência */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Contêiner principal da Tier List */
+.tier-list-container {
+    max-width: 900px;
+    margin: 0 auto 30px auto; /* Adicionado margem inferior para separar da galeria */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de cada Tier (Zona de Soltura) */
+.tier {
+    display: flex;
+    align-items: stretch; /* Garante que o rótulo e os itens tenham a mesma altura */
+    min-height: 120px; /* Altura mínima ajustada para as imagens */
+    border-bottom: 1px solid #ddd;
+}
+
+.tier-label {
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    flex-shrink: 0; /* Impede que o label encolha */
+}
+
+/* Estilos de cor para cada Tier */
+.s-tier .tier-label { background-color: #ff7f7f; } /* Vermelho: O melhor */
+.a-tier .tier-label { background-color: #ffbf7f; } /* Laranja: Excelente */
+.b-tier .tier-label { background-color: #ffff7f; } /* Amarelo: Bom */
+.c-tier .tier-label { background-color: #7fbfff; } /* Azul: Ok */
+
+/* Contêiner dos itens dentro de cada Tier */
+.tier-items {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    align-items: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    min-height: 100px; /* Garante que a zona de drop tenha uma altura mínima */
+}
+
+/* --- Galeria de Imagens --- */
+.gallery-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-container h2 {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.gallery-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza as imagens na galeria */
+    gap: 15px; /* Espaçamento entre as imagens */
+    min-height: 120px; /* Altura mínima para a galeria */
+}
+
+/* Estilo para as Imagens Arrastáveis */
+.gallery-item {
+    width: 100px; /* Tamanho fixo para as imagens */
+    height: 100px;
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorção */
+    border: 3px solid #457b9d;
+    border-radius: 8px;
+    cursor: grab; /* Indica que a imagem é arrastável */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* --- Estilos para o Drag and Drop (manipulados via JavaScript) --- */
+
+/* Estilo para o item que está sendo arrastado */
+.dragging {
+    opacity: 0.4; /* Torna-o semitransparente enquanto está sendo arrastado */
+    border: 2px dashed #457b9d;
+}
+
+/* Estilo para as zonas de soltura válidas (adicionado em dragover) */
+.drag-over {
+    background-color: #e6f7ff !important; /* Mais claro para indicar a zona ativa */
+    border: 2px dashed #1d3557;
+}
+
+/* Estilo para o drop-zone quando está vazia, para ser visível */
+.tier-items:empty {
+    /* Pode adicionar um estilo aqui para indicar que está vazia, se desejar */
+    /* Por exemplo, um texto "Arraste aqui" */
+}
